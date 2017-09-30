@@ -14,15 +14,29 @@ from functools import reduce
 
 # Sum of even fibonacci numbers up to 4 million
 
-fibList = []
-a,b = 0,1
-while b < 4000000:
-    if a % 2 == 0:
-        fibList.append(a)
-    if b % 2 == 0:
-        fibList.append(b)
-    a,b = b, a+b
+# fibList = []
+# a,b = 0,1
+# while b < 4000000:
+#     if a % 2 == 0:
+#         fibList.append(a)
+#     if b % 2 == 0:
+#         fibList.append(b)
+#     a,b = b, a+b
+#
+# answer = reduce((lambda x,y: x + y), set(fibList))
 
-answer = reduce((lambda x,y: x + y), set(fibList))
+# What is the largest prime factor of the number 600851475143 ?
 
-print(answer)
+def primes(m):
+    primeNums = []
+    for n in range(2,m):
+        for x in range(2,n):
+            if n%x == 0:
+                break
+        else:
+            primeNums.append(n)
+    print(primeNums)
+
+primes(100)
+
+# print(answer)
