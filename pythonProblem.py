@@ -27,25 +27,43 @@ from functools import reduce
 
 # What is the largest prime factor of the number 600851475143 ?
 
-def primes(m):
-    primeNums = []
+# def primes(m):
+#     primeNums = []
+#     for n in range(2,m):
+#         for x in range(2,n):
+#             if n%x == 0:
+#                 break
+#         else:
+#             primeNums.append(n)
+#     return primeNums
+
+# def factorials(f):
+#     primeFactorials = []
+#     primeNums = primes(10000)
+#     for p in primeNums:
+#         if f % p == 0:
+#             primeFactorials.append(p)
+#     return primeFactorials
+#
+# l=factorials(600851475143)
+# answer=l.pop()
+
+# Find the 10001st prime number
+
+m = 3
+primeNums = []
+
+while len(primeNums) < 10000:
     for n in range(2,m):
         for x in range(2,n):
             if n%x == 0:
+                m+=1
                 break
         else:
-            primeNums.append(n)
-    return primeNums
+            m+=1
+            if n not in primeNums:
+                primeNums.append(n)
 
-def factorials(f):
-    primeFactorials = []
-    primeNums = primes(10000)
-    for p in primeNums:
-        if f % p == 0:
-            primeFactorials.append(p)
-    return primeFactorials
 
-l=factorials(600851475143)
-answer=l.pop()
-
-print(answer)
+# answer = primeNums.pop()
+print([primeNums[10000], len(primeNums), primeNums])
