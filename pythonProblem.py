@@ -35,8 +35,17 @@ def primes(m):
                 break
         else:
             primeNums.append(n)
-    print(primeNums)
+    return primeNums
 
-primes(100)
+def factorials(f):
+    primeFactorials = []
+    primeNums = primes(10000)
+    for p in primeNums:
+        if f % p == 0:
+            primeFactorials.append(p)
+    return primeFactorials
 
-# print(answer)
+l=factorials(600851475143)
+answer=l.pop()
+
+print(answer)
