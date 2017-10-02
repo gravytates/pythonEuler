@@ -86,8 +86,6 @@ while b <= len(bigArray):
 for n in range(len(productArray)-1,0,-1):
     for i in range(n):
         if productArray[i] > productArray[i+1]:
-            temp = productArray[i]
-            productArray[i] = productArray[i+1]
-            productArray[i+1] = temp
+            productArray[i], productArray[i+1] = productArray[i+1], productArray[i]
 
 print(productArray)
