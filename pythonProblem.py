@@ -1,4 +1,5 @@
 from functools import reduce
+import math
 
 # Sum of multiples of 3 and 5 up to 1000
 # total = []
@@ -91,10 +92,25 @@ from functools import reduce
 # print(productArray)
 
 # Difference between Square of Sums and Sum of squares from 1 to 100
-squares = 0
-sums = 0
-for i in range(1,101):
-    squares += i ** 2
-    sums += i
+# squares = 0
+# sums = 0
+# for i in range(1,101):
+#     squares += i ** 2
+#     sums += i
+#
+# print((sums ** 2) - squares)
 
-print((sums ** 2) - squares)
+
+# Sum prime numbers up to 2000000
+primeNums = [2]
+for n in range(3,2000000,2):
+    o = int(math.sqrt(n))
+    for x in range(3,(o+1),2):
+        if n%x == 0:
+            break
+    else:
+        primeNums.append(n)
+
+answer = reduce((lambda x, y: x + y), primeNums)
+
+print(answer)
